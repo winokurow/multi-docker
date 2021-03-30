@@ -19,3 +19,15 @@ after_success:
   - docker push iwinokurow/multi-nginx
   - docker push iwinokurow/multi-server
   - docker push iwinokurow/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-eu-central-1-571169730856
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
