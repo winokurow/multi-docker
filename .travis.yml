@@ -19,7 +19,6 @@ after_success:
   - docker push iwinokurow/multi-nginx
   - docker push iwinokurow/multi-server
   - docker push iwinokurow/multi-worker
-
 deploy:
   provider: elasticbeanstalk
   region: eu-central-1
