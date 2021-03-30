@@ -13,7 +13,6 @@ after_success:
   - docker build -t iwinokurow/multi-nginx ./nginx
   - docker build -t iwinokurow/multi-server ./server
   - docker build -t iwinokurow/multi-worker ./worker
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push iwinokurow/multi-client
   - docker push iwinokurow/multi-nginx
